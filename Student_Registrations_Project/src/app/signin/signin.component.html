@@ -1,0 +1,32 @@
+<div style="margin-top: 12%;margin-left: 29%;border: 3px solid; width: 45%;text-align: center;">
+    <div>
+        <h1 style="text-align: center;">Login</h1>
+    </div>
+    <div class="form">
+        <form [formGroup]="signForm" (ngSubmit)="submitSignIN()">
+            <div class="form-group">
+                <label>Email :
+                    <input class="form-control" type="email" formControlName="Email">
+                </label>
+                <div style="width: 31%;margin-left: 35%;margin-top: 2%;" class="alert alert-danger" role="alert"
+                    *ngIf="isSubmitted && Email.errors?.['required']">
+                    Email is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password :
+                    <input class="form-control" type="password" formControlName="Password" name="password">
+                </label>
+                <div style="width: 31%;margin-left: 35%;margin-top: 2%;" class="alert alert-danger" role="alert"
+                    *ngIf="isSubmitted && Password.errors?.['required']">
+                    Password is required
+                </div>
+            </div>
+            <div style="width: 31%;margin-left: 35%;margin-top: 2%;" class="alert alert-danger" role="alert"
+                *ngIf="isSubmitted && errorMessage">
+                Invalid User, Please check your email or password
+            </div>
+            <button style="margin-top: 3%;margin-bottom: 3%;" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.viewRegistration
+{
+    max-width: 400px;
+}
+.column {
+    width: 30%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

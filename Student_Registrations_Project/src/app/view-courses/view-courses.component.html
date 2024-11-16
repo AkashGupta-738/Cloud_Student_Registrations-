@@ -1,0 +1,38 @@
+<div class="Filter" style="    margin-left: 3%;margin-top: 2%;">
+<h4>Select Term</h4>
+<mat-form-field appearance="fill">
+    <mat-label>Terms</mat-label>
+    <mat-select (selectionChange)="OptionSelect()"  [(ngModel)]="termSelected">
+        <mat-option *ngFor="let term of terms" [value]="term">
+            {{term}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+</div>
+
+
+<div style="    margin-left: 3%;margin-top: 2%;">
+<mat-card class="viewRegistration" style="width: 90%;">
+    <mat-card-header>
+        <mat-card-title>View Course</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Term</th>
+            <th>Professor</th>
+            <th>Timing</th>
+            <th>Course Credit</th>
+        </tr>
+        <tr *ngFor="let courseInfo of courseList">
+            <td>{{courseInfo.Course_Name}}</td>
+            <td>{{termSelected}}</td>
+            <td>{{courseInfo.Professor}}</td>
+            <td>{{courseInfo.Timing}}</td>
+            <td>{{courseInfo.Course_Credit}}</td>
+        </tr>
+    </table>
+    </mat-card-content>
+</mat-card>
+</div>

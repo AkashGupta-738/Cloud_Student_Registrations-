@@ -1,0 +1,15 @@
+<div style="margin-top: 10%;margin-left: 35%;border: 2px solid; width: 30%;">
+    <div>
+        <h1 style="margin-left:35%;">Code Vertification</h1>
+    </div>
+    <div class="form" style="padding: 10px; margin-left: 30%;">
+        <form [formGroup]="codeVerificationForm" (ngSubmit)="submitCodeVerification()">
+            <div class="form-group">
+                <label>code :
+                    <input class="form-control" type="text" formControlName="Code">
+                </label>
+            </div>
+            <button style="margin-top: 3%;margin-left: 18%;" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
